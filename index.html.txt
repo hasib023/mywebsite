@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ivision Consultancy | Saudi Arabia</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&amp;family=Playfair+Display:wght@700&amp;display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* --- VARIABLES --- */
+        :root {
+            --primary: #000000; /* Black */
+            --secondary: #111111; /* Dark Charcoal */
+            --accent: #d4af37; /* Metallic Gold */
+            --accent-hover: #c5a028;
+            --text-dark: #1a1a1a;
+            --text-light: #555555;
+            --white: #ffffff;
+            --bg-light: #f8f9fa;
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+
+        /* --- RESET & BASIC SETUP --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', Helvetica, Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--text-dark);
+            background-color: var(--bg-light);
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a { text-decoration: none; color: inherit; transition: var(--transition); cursor: pointer; }
+        ul { list-style: none; }
+
+        /* --- TYPOGRAPHY --- */
+        h1, h2, h3 {
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2.5rem;
+        }
+        
+        h2::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: var(--accent);
+            margin-top: 10px;
+            transition: width 0.3s ease;
+        }
+
+        section:hover h2::after {
+            width: 100px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--text-light);
+            font-size: 1.05rem;
+        }
+
+        /* --- UTILITIES --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-padding { padding: 100px 0; }
+
+        .text-center { text-align: center; }
+        .text-white h1, .text-white h2, .text-white p { color: var(--white); }
+
+        .hidden { display: none !important; }
+        
+        /* --- NEW PAGE TRANSITION ANIMATION (Slide Up) --- */
+        .fade-in {
+            animation: slideUp 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0; 
+                transform: translateY(50px); /* Starts lower, slides up like a new page */
+            } 
+            to { 
+                opacity: 1; 
+                transform: translateY(0); 
+            } 
+        }
+
+        /* --- HEADER & NAV --- */
+        header {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.5px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            cursor: pointer;
+        }
+
+        .custom-logo-svg {
+            width: 40px;
+            height: 40px;
+            fill: none;
+            stroke-width: 2.5;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+        
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-weight: 500;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            color: var(--primary);
+            position: relative;
+        }
+
+        .nav-links a:not(.cta-btn)::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:not(.cta-btn):hover::after { width: 100%; }
+
+        .cta-btn {
+            background-color: var(--primary);
+            color: var(--white) !important;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--primary);
+        }
+        
+        .cta-btn:hover { 
+            background-color: transparent;
+            color: var(--primary) !important;
+        }
+
+        .back-btn {
+            background: transparent;
+            border: 1px solid var(--primary);
+            color: var(--primary);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition);
+        }
+        
+        .back-btn:hover {
+            background: var(--primary);
+            color: var(--white);
+        }
+
+        /* --- BACK BUTTON ACTIVE STATE (Feedback on click) --- */
+        .back-link:active {
+            transform: scale(0.95); /* Shrinks slightly to simulate press */
+            color: var(--accent); /* Turns gold */
+            border-color: var(--accent);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--primary);
+            cursor: pointer;
+        }
+
+        /* --- HERO SECTION (BLACK OVERLAY APPLIED) --- */
+        .hero {
+            position: relative;
+            height: 90vh;
+            min-height: 600px;
+            display: flex;
+            align-items: center;
+            /* 
+               --- PASTE YOUR NEW IMAGE URL BELOW --- 
+               Replace 'INSERT_YOUR_IMAGE_URL_HERE' with your file path
+            */
+            background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), /* FORCED BLACK OVERLAY */
+                        url('INSERT_YOUR_IMAGE_URL_HERE'); 
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--white);
+            overflow: hidden;
+        }
+
+        /* SVG Animation Layer */
+        .hero-bg-anim {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0.4;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        @keyframes drawLine {
+            0% { stroke-dashoffset: 2000; opacity: 0; }
+            20% { opacity: 1; }
+            100% { stroke-dashoffset: 0; opacity: 1; }
+        }
+
+        @keyframes floatNode {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+        }
+
+        /* HERO OVERLAY (Forced Black) */
+        .hero-overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            /* Changed to pure black to fix "transparent" look */
+            background: rgba(0, 0, 0, 0.4); 
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            opacity: 0;
+            transform: translateY(30px);
+            animation: heroFadeUp 1s ease-out forwards 0.5s;
+        }
+
+        @keyframes heroFadeUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .hero h1 { color: var(--white); margin-bottom: 25px; text-shadow: 0 2px 10px rgba(0,0,0,0.5); }
+        .hero p { color: #eee; font-size: 1.3rem; margin-bottom: 40px; font-weight: 300; text-shadow: 0 1px 5px rgba(0,0,0,0.5); }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .hero-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 15px 40px;
+            font-weight: 700;
+            border-radius: 50px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
+            border: none;
+            transition: var(--transition);
+        }
+
+        .hero-btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.2);
+            color: var(--primary);
+        }
+
+        /* --- STATS BAR --- */
+        .stats-bar {
+            background: var(--white);
+            padding: 60px 0;
+            margin-top: -60px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border-radius: 8px;
+            border-top: 4px solid var(--accent);
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 5px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .stat-item span {
+            color: var(--text-light);
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* --- ABOUT SECTION & 2D SLIDER --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .about-slider-container {
+            position: relative;
+            width: 100%;
+            height: 500px;
+            overflow: hidden;
+            border-radius: 8px;
+            box-shadow: 20px 20px 0 var(--secondary);
+            background: #ddd;
+        }
+
+        .slides-track {
+            display: flex;
+            height: 100%;
+            transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        .slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transform: scale(1);
+            transition: transform 6s ease;
+        }
+
+        .slide.active img {
+            transform: scale(1.1);
+        }
+
+        .nav-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+            z-index: 10;
+            font-size: 1.1rem;
+        }
+
+        .nav-btn:hover {
+            background: var(--accent);
+            color: var(--primary);
+        }
+
+        .prev-btn { left: 20px; }
+        .next-btn { right: 20px; }
+
+        .slider-dots {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .dot.active {
+            background: var(--accent);
+            transform: scale(1.3);
+        }
+
+        .credentials {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            background: var(--primary);
+            color: var(--white);
+            padding: 8px 16px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 4px;
+            border-left: 3px solid var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* --- SERVICES SECTION --- */
+        .bg-light { background-color: #fff; }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .service-card {
+            background: var(--bg-light);
+            padding: 40px 30px;
+            border-radius: 8px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+            border-bottom: 3px solid transparent;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .service-card:hover {
+            background: var(--white);
+            border-bottom: 3px solid var(--accent);
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .icon-box {
+            background: var(--primary);
+            color: var(--accent);
+        }
+
+        .service-card h3 { font-size: 1.3rem; margin-bottom: 15px; }
+        
+        .service-card .read-more {
+            font-size: 0.85rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-top: 15px;
+            display: inline-block;
+            opacity: 0.8;
+        }
+
+        .service-card:hover .read-more { opacity: 1; }
+
+        /* --- SERVICE DETAIL HERO (BLACK OVERLAY APPLIED) --- */
+        .service-hero {
+          width: 100%;
+          height: 420px;
+          /* 
+               --- PASTE YOUR NEW IMAGE URL BELOW --- 
+               Replace 'INSERT_YOUR_IMAGE_URL_HERE' with your file path
+          */
+          background-image: url('INSERT_YOUR_IMAGE_URL_HERE');
+          background-size: cover;
+          background-position: center;
+          background-repeat: no-repeat;
+        }
+
+        /* Service Hero Overlay (Forced Black to remove transparency) */
+        .service-hero .hero-overlay {
+          width: 100%;
+          height: 100%;
+          /* Changed to pure black to ensure image looks dark/black */
+          background: rgba(0, 0, 0, 0.85); 
+          padding: 60px 80px;
+        }
+
+        .back-link {
+          color: #ffffff;
+          text-decoration: none;
+          font-size: 14px;
+          display: inline-flex; /* Updated to flex for icon alignment */
+          align-items: center;
+          gap: 8px;
+          margin-bottom: 40px;
+          transition: var(--transition);
+        }
+
+        .back-link:hover {
+            opacity: 0.8;
+        }
+
+        .hero-content {
+          max-width: 700px;
+        }
+
+        .hero-icon {
+          display: inline-block; 
+          font-size: 44px; 
+          width: auto;
+          margin-bottom: 18px;
+          color: var(--accent);
+        }
+
+        .hero-content h1 {
+          color: #ffffff;
+          font-size: 48px;
+          margin-bottom: 12px;
+        }
+
+        .hero-content p {
+          color: #e6eef6;
+          font-size: 18px;
+          line-height: 1.6;
+        }
+
+        /* --- SERVICE DETAIL PAGE CONTENT --- */
+        .service-detail-content {
+            margin-top: 60px;
+            margin-bottom: 60px;
+        }
+
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 50px;
+        }
+
+        .detail-main h2 {
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .detail-main ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        .detail-main ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 12px;
+            color: var(--text-light);
+        }
+
+        .detail-main ul li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            top: 2px;
+        }
+
+        .detail-sidebar {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            height: fit-content;
+            position: sticky;
+            top: 100px;
+            border: 1px solid #eee;
+        }
+
+        .detail-sidebar h3 {
+            font-size: 1.2rem;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+            margin-bottom: 20px;
+        }
+
+        .contact-btn {
+            display: block;
+            width: 100%;
+            background: var(--accent);
+            color: var(--primary);
+            text-align: center;
+            padding: 15px;
+            border-radius: 5px;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: var(--transition);
+        }
+
+        .contact-btn:hover { background: var(--accent-hover); }
+
+        /* --- CLIENTS --- */
+        .clients-section {
+            background-color: var(--primary);
+            color: var(--white);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .clients-section::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .clients-section h2 { color: var(--white); }
+        .clients-section p { color: #ccc; max-width: 800px; margin: 0 auto; position: relative; z-index: 2; }
+
+        /* --- FOOTER --- */
+        footer {
+            background: #000000;
+            color: var(--white);
+            padding: 80px 0 30px;
+            border-top: 5px solid var(--accent);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 60px;
+        }
+
+        .footer-col h3 {
+            color: var(--white);
+            font-size: 1.2rem;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #333;
+            display: inline-block;
+        }
+
+        .contact-info li {
+            margin-bottom: 15px;
+            color: #aaa;
+            display: flex;
+            gap: 15px;
+            align-items: flex-start;
+        }
+
+        .contact-info i { color: var(--accent); margin-top: 5px; width: 20px; text-align: center;}
+        .contact-info strong { color: var(--white); display: block; margin-bottom: 3px; }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #333;
+            padding-top: 30px;
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* --- ANIMATION CLASSES --- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active { opacity: 1; transform: translateY(0); }
+        .delay-100 { transition-delay: 0.1s; }
+        .delay-200 { transition-delay: 0.2s; }
+        .delay-300 { transition-delay: 0.3s; }
+
+        /* --- MOBILE RESPONSIVE --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 2.8rem; }
+            .about-grid { grid-template-columns: 1fr; }
+            .about-slider-container { height: 350px; box-shadow: 10px 10px 0 var(--secondary); }
+            .detail-grid { grid-template-columns: 1fr; }
+            .detail-sidebar { position: static; margin-top: 40px; }
+            
+            .service-hero { height: auto; padding: 40px 0; }
+            .hero-overlay { padding: 0 20px; }
+            .hero-content h1 { font-size: 2.5rem; }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                position: absolute;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: var(--white);
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+                clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+                transition: 0.4s ease-in-out;
+                gap: 20px;
+            }
+
+            .nav-links.active { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+            .mobile-toggle { display: block; }
+            .hero { text-align: center; justify-content: center; padding: 0 20px;}
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .hero-btn, .hero-btn-linkedin { width: 100%; }
+            .stats-bar { margin-top: 0; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo" onclick="goHome()">
+                <!-- CUSTOM SVG LOGO: Abstract Eye + Governance Bar -->
+                <svg class="custom-logo-svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Abstract Eye Shape (Oversight/Vigilance) -->
+                    <path d="M10 50 Q50 10 90 50 Q50 90 10 50" stroke="#000000" stroke-width="3" fill="none"></path>
+                    <!-- Center Bar (Governance/Discipline) -->
+                    <line x1="50" y1="25" x2="50" y2="75" stroke="#d4af37" stroke-width="5"></line>
+                    <!-- Symmetry Accents -->
+                    <circle cx="50" cy="50" r="4" fill="#000000"></circle>
+                </svg>
+                <span>ivision&nbsp;<span style="color:var(--accent)">Consultancy</span></span>
+            </div>
+            <div class="mobile-toggle" id="mobile-menu-btn">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <nav class="nav-links" id="nav-links">
+                <a href="#" onclick="goHome()">Home</a>
+                <a href="#about" onclick="goHome()">About</a>
+                <a href="#services" onclick="goHome()">Services</a>
+                <a href="#clients" onclick="goHome()">Clients</a>
+                <a href="#contact" class="cta-btn">Contact Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- === HOME VIEW === -->
+    <div id="home-view">
+        <!-- Hero Section -->
+        <section class="hero">
+            <!-- 2D Animated Background SVG -->
+            <svg class="hero-bg-anim" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 800" preserveAspectRatio="xMidYMid slice">
+                <defs>
+                    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" style="stop-color:#000000;stop-opacity:0"></stop>
+                        <stop offset="100%" style="stop-color:#d4af37;stop-opacity:0.4"></stop>
+                    </linearGradient>
+                </defs>
+                <!-- Animated Line -->
+                <path d="M0,800 L200,600 L400,650 L600,400 L800,450 L1000,200 L1200,300 L1440,100" fill="none" stroke="url(#grad1)" stroke-width="3" style="stroke-dasharray: 2000; stroke-dashoffset: 2000; animation: drawLine 4s ease-out forwards infinite alternate;"></path>
+                
+                <!-- Animated Nodes -->
+                <circle cx="200" cy="600" r="5" fill="#d4af37" style="animation: floatNode 4s ease-in-out infinite;">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="4s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle cx="600" cy="400" r="7" fill="#ffffff" style="animation: floatNode 5s ease-in-out infinite;">
+                    <animate attributeName="opacity" values="0.2;1;0.2" dur="5s" repeatCount="indefinite"></animate>
+                </circle>
+                <circle cx="1000" cy="200" r="6" fill="#d4af37" style="animation: floatNode 6s ease-in-out infinite;">
+                     <animate attributeName="opacity" values="0.2;1;0.2" dur="6s" repeatCount="indefinite"></animate>
+                </circle>
+                
+                <!-- Background Grid Lines -->
+                <line x1="0" y1="600" x2="1440" y2="600" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"></line>
+                <line x1="0" y1="400" x2="1440" y2="400" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"></line>
+                <line x1="0" y1="200" x2="1440" y2="200" stroke="#ffffff" stroke-opacity="0.05" stroke-width="1"></line>
+            </svg>
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <h1>Where Accounting Meets Accountability.</h1>
+                <p>Providing accounting, tax, and corporate services in Saudi Arabia with Big-4 firm experience.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="hero-btn">Partner With Us</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Section -->
+        <div class="container">
+            <div class="stats-bar reveal">
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <h3 data-target="15">0</h3>
+                        <span>Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3 data-target="200">0</h3>
+                        <span>Clients Served</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3 data-target="100">0</h3>
+                        <span>% Compliance</span>
+                    </div>
+                    <div class="stat-item">
+                        <h3 data-target="10">0</h3>
+                        <span>Big 4 Alumni</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Section WITH 2D SLIDER -->
+        <section id="about" class="section-padding">
+            <div class="container">
+                <div class="about-grid">
+                    <div class="about-text reveal">
+                        <h2>About Us</h2>
+                        <div class="credentials">
+                            <span class="badge"><i class="fa-solid fa-certificate"></i> SULEMAN</span>
+                            <span class="badge"><i class="fa-solid fa-award"></i> (FCCA)</span>
+                        </div>
+                        <p><strong>ivision Consultancy</strong> is a premier professional advisory firm providing accounting, tax, and corporate services in Saudi Arabia.</p>
+                        <p>Our team consists of qualified Chartered Accountants and consultants with <strong>Big-4 firm experience</strong> and strong local regulatory knowledge. We support local and international businesses with compliance, structuring, and financial advisory services, helping them operate efficiently while meeting all Saudi regulatory requirements.</p>
+                        <p>Our focus is on practical solutions, regulatory compliance, and long-term client relationships.</p>
+                    </div>
+                    
+                    <!-- 2D SLIDER START -->
+                    <div class="about-slider-container reveal delay-200">
+                        <div class="slides-track" id="slidesTrack">
+                            <!-- Slide 1: Office Workstation -->
+                            <div class="slide active">
+                                <img src="https://z-cdn-media.chatglm.cn/files/16000fd2-dde2-44a7-9f49-7f8a6ef0d57c.png?auth_key=1869496171-97e5d7f674bc46a6be5cc92a83bd9b51-0-b6c3434371bbdf48b61e3aaf5d7d5a4c" alt="Office professional at workstation">
+                            </div>
+                            <!-- Slide 2: Team Meeting -->
+                            <div class="slide">
+                                <img src="https://z-cdn-media.chatglm.cn/files/3d39c0c3-15c1-4c7e-abcf-4c9baed95659.png?auth_key=1869497011-72b190c080584b0d943963b255fb37b1-0-cf8e93afee10506b12b119e9945c8b2b" alt="Five people discussing data">
+                            </div>
+                            <!-- Slide 3: City Building -->
+                            <div class="slide">
+                                <img src="https://z-cdn-media.chatglm.cn/files/f84a85c6-750f-48c7-bef2-431a6d1a1a93.png?auth_key=1869497011-2384ba610fd44f25b83d6310589a5ec3-0-f8107a20599c30ff3eb5bda684ba5d1c" alt="Modern glass office building">
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <button class="nav-btn prev-btn" id="prevBtn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="nav-btn next-btn" id="nextBtn"><i class="fas fa-chevron-right"></i></button>
+
+                        <!-- Dots -->
+                        <div class="slider-dots" id="sliderDots"></div>
+                    </div>
+                    <!-- 2D SLIDER END -->
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section-padding bg-light">
+            <div class="container">
+                <div class="text-center reveal">
+                    <h2>Our Services</h2>
+                    <p>Practical, compliant, and aligned with current regulations.</p>
+                </div>
+                
+                <div class="services-grid" id="services-grid">
+                    <!-- Services injected via JS -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Clients Section -->
+        <section id="clients" class="section-padding clients-section">
+            <div class="container reveal">
+                <h2>Our Clients</h2>
+                <p>We serve local and international companies across various industries, including trading, manufacturing, services, construction, retail, and professional services.</p>
+                <br>
+                <p style="font-size: 1.2rem; font-weight: 300;">Our clients value us for our <strong style="color:var(--accent)">practical approach</strong>, <strong style="color:var(--accent)">regulatory expertise</strong>, and <strong style="color:var(--accent)">responsive support</strong>.</p>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer id="contact">
+            <div class="container">
+                <div class="footer-grid">
+                    <div class="footer-col reveal">
+                        <h3>ivision Consultancy</h3>
+                        <p style="color: #aaa; margin-bottom: 20px;">
+                            World-class financial expertise with local Saudi insight. Bridging the gap between global standards and local regulations.
+                        </p>
+                    </div>
+
+                    <div class="footer-col reveal delay-200">
+                        <h3>Contact Partner</h3>
+                        
+                        <!-- Simple Contact Info -->
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fa-solid fa-user"></i>
+                                <div>
+                                    <strong class="">SULEMAN</strong>&nbsp;FCCA
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-phone"></i>
+                                <div>
+                                    <strong class="">Phone</strong>0595227868</div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-envelope"></i>
+                                <div>
+                                    <strong class="">Email</strong>suleman@ivisionconsultancy.com</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-col reveal delay-300">
+                        <h3>Location</h3>
+                        <ul class="contact-info">
+                            <li>
+                                <i class="fa-solid fa-location-dot"></i>
+                                <div>
+                                    <strong>Regions Served</strong>
+                                    Saudi Arabia
+                                </div>
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-clock"></i>
+                                <div>
+                                    <strong>Working Hours</strong>
+                                    Sun - Thu: 9:00 AM - 6:00 PM
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="copyright">
+                    © 2026 ivision Consultancy. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+    <!-- END HOME VIEW -->
+
+
+    <!-- === SERVICE DETAIL VIEW (DYNAMIC) === -->
+    <!-- CSS FIX: Background color applied to container to prevent transparency artifact -->
+    <style>
+        #service-view {
+            /* FIX: Force solid white background to eliminate transparency artifacts.
+               Without this, container reveals the body background (or overlay) 
+               during transitions.
+            */
+            background-color: #ffffff; 
+            min-height: 100vh;
+        }
+    </style>
+    
+    <div id="service-view" class="hidden">
+        
+        <!-- NEW HERO BANNER -->
+        <section class="service-hero">
+          <div class="hero-overlay">
+            <!-- HTML FIX: Changed <a> to <div> to prevent anchor navigation conflict -->
+            <div class="back-link" onclick="goHome()">
+                <i class="fa-solid fa-arrow-left"></i> Back to Home
+            </div>
+
+            <div class="hero-content">
+              <i id="service-banner-icon" class="fa-solid fa-file-invoice-dollar hero-icon"></i>
+              <h1 id="service-banner-title">Tax Advisory Services</h1>
+              <p id="service-banner-subtitle">Expert Saudi Tax Advisors with Practical Business Insight</p>
+            </div>
+          </div>
+        </section>
+
+        <div class="container section-padding">
+            <div class="detail-grid">
+                <!-- Main Content -->
+                <div class="detail-main" id="detail-content">
+                    <!-- Content injected via JS -->
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="detail-sidebar">
+                    <h3>Need Assistance?</h3>
+                    <p style="font-size: 0.9rem;">Our team is ready to help you navigate these requirements efficiently.</p>
+                    <div class="contact-btn" onclick="scrollToContact()">
+                        Contact Us
+                    </div>
+                </aside>
+            </div>
+        </div>
+
+        <!-- Footer (Reuse for consistency) -->
+        <footer>
+            <div class="container">
+                <div class="copyright" style="margin-top: 0; border:none; padding-top:0;">
+                    © 2026 ivision Consultancy. All Rights Reserved.
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- DATA SOURCE (UPDATED) ---
+            const servicesData = [
+                {
+                    id: 'cfo',
+                    title: 'CFO Services',
+                    icon: 'fa-user-tie',
+                    subtitle: 'Strategic Financial Leadership with Commercial Insight',
+                    intro: 'ivision Consultancy provides professional CFO services in Saudi Arabia, supporting business owners, CEOs, and management teams with strategic financial leadership, control, and decision-making support.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive CFO Services in Saudi Arabia',
+                            text: 'Our CFO services cover all major areas of financial management, providing businesses with a single, reliable advisory partner.',
+                            list: [
+                                '<strong>Financial Planning & Budgeting:</strong> We support businesses with budgeting, forecasting, and financial planning to improve visibility and control over financial performance.',
+                                '<strong>Cash Flow & Working Capital Management:</strong> We help businesses manage cash flow, optimize working capital, and maintain financial stability.',
+                                '<strong>Management Reporting & Analysis:</strong> We prepare clear and insightful management reports, helping leadership understand performance, trends, and key financial drivers.',
+                                '<strong>Financial Controls & Governance:</strong> We strengthen internal controls, financial processes, and governance structures to reduce risk and support compliance.',
+                                '<strong>Strategic Advisory & Business Support:</strong> We support key business decisions, expansion plans, restructuring, and investment initiatives.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'tax-advisory',
+                    title: 'Tax Advisory Services',
+                    icon: 'fa-file-invoice-dollar',
+                    subtitle: 'Expert Saudi Tax Advisors with Practical Business Insight',
+                    intro: 'ivision Consultancy is a trusted provider of professional tax advisory services in Saudi Arabia, helping businesses stay compliant, reduce tax risks, and operate with confidence under ZATCA regulations.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive Tax Advisory Services',
+                            text: 'Our tax advisory services cover all major areas of Saudi taxation, providing businesses with a single, reliable advisory partner.',
+                            list: [
+                                '<strong>Corporate Tax & Zakat Advisory:</strong> We advise businesses on corporate tax and Zakat matters, including planning, interpretation of regulations, risk assessment, and structuring to ensure accurate reporting.',
+                                '<strong>VAT Advisory Services:</strong> We support businesses with VAT advisory, including transaction reviews, VAT treatment analysis, compliance support, and audit readiness.',
+                                '<strong>Withholding Tax Advisory:</strong> We assist businesses in managing withholding tax obligations on cross-border payments.',
+                                '<strong>Tax Risk Management & Audit Support:</strong> We help businesses identify tax risks early, prepare for ZATCA audits, respond to assessments, and manage disputes professionally.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'corporate-structuring',
+                    title: 'Corporate Structuring Services',
+                    icon: 'fa-sitemap',
+                    subtitle: 'Strategic Corporate Structuring with Commercial Focus',
+                    intro: 'ivision Consultancy provides expert corporate structuring services in Saudi Arabia, helping businesses establish strong, compliant, and efficient corporate structures.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive Corporate Structuring Solutions',
+                            text: 'We design efficient group and holding structures that support governance.',
+                            list: [
+                                '<strong>Business Setup & Entity Structuring:</strong> We advise on the most suitable legal structure for your business.',
+                                '<strong>Holding & Group Structures:</strong> We design efficient group and holding structures that support governance.',
+                                '<strong>Regulatory & Compliance Alignment:</strong> We ensure that corporate structures comply with Saudi laws.',
+                                '<strong>Tax-Efficient Structuring:</strong> We ensure structures are aligned with tax, Zakat, and VAT considerations.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'corporate-tax',
+                    title: 'Corporate Tax Compliance Services',
+                    icon: 'fa-building-columns',
+                    subtitle: 'Reliable Corporate Tax Compliance with Full Regulatory Confidence',
+                    intro: 'ivision Consultancy provides comprehensive corporate tax compliance services in Saudi Arabia, supporting businesses with accurate registration and timely filings.',
+                    sections: [
+                        {
+                            heading: 'End-to-End Corporate Tax Compliance Services',
+                            text: 'We prepare and file corporate tax returns in accordance with Saudi tax laws.',
+                            list: [
+                                '<strong>Corporate Tax Registration:</strong> We assist businesses with corporate tax registration.',
+                                '<strong>Corporate Tax Return Preparation & Filing:</strong> We prepare and file corporate tax returns in accordance with Saudi tax laws.',
+                                '<strong>Ongoing Compliance & Advisory Support:</strong> We provide continuous support throughout the year.',
+                                '<strong>ZATCA Audit & Review Support:</strong> We assist businesses during ZATCA reviews and audits.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'zakat',
+                    title: 'Zakat Services',
+                    icon: 'fa-hand-holding-dollar',
+                    subtitle: 'Expert Zakat Advisory with Practical Business Focus',
+                    intro: 'ivision Consultancy provides comprehensive Zakat services in Saudi Arabia, supporting businesses with accurate calculation and optimal Zakat planning.',
+                    sections: [
+                        {
+                            heading: 'End-to-End Zakat Compliance Services',
+                            text: 'We manage the preparation and filing of Zakat returns.',
+                            list: [
+                                '<strong>Zakat Calculation & Review:</strong> We prepare and review Zakat calculations in line with ZATCA guidelines.',
+                                '<strong>Optimal Zakat Planning:</strong> We advise on optimal Zakat positions.',
+                                '<strong>Zakat Return Filing:</strong> We manage the preparation and filing of Zakat returns.',
+                                '<strong>ZATCA Liaison & Audit Support:</strong> We support businesses during ZATCA reviews.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'vat',
+                    title: 'VAT Services',
+                    icon: 'fa-percent',
+                    subtitle: 'Expert VAT Advisory with a Commercial Approach',
+                    intro: 'ivision Consultancy provides professional VAT services in Saudi Arabia, helping businesses comply with Saudi VAT regulations.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive VAT Services in Saudi Arabia',
+                            text: 'We prepare and file VAT returns accurately and on time.',
+                            list: [
+                                '<strong>VAT Registration & Deregistration:</strong> We assist businesses with VAT registration.',
+                                '<strong>VAT Return Preparation & Filing:</strong> We prepare and file VAT returns accurately and on time.',
+                                '<strong>VAT Advisory & Transaction Support:</strong> We advise on VAT treatment of local and cross-border transactions.',
+                                '<strong>VAT Audit & ZATCA Support:</strong> We support businesses during ZATCA VAT audits.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'withholding-tax',
+                    title: 'Withholding Tax Services',
+                    icon: 'fa-money-bill-transfer',
+                    subtitle: 'Clear Withholding Tax Advice with Commercial Understanding',
+                    intro: 'ivision Consultancy provides expert withholding tax services in Saudi Arabia, helping businesses manage withholding tax obligations.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive Withholding Tax Services in Saudi Arabia',
+                            text: 'We prepare and file withholding tax returns.',
+                            list: [
+                                '<strong>Withholding Tax Assessment & Advisory:</strong> We review cross-border transactions.',
+                                '<strong>Withholding Tax Return Preparation & Filing:</strong> We prepare and file withholding tax returns.',
+                                '<strong>Double Tax Treaty Advisory:</strong> We advise on the application of double tax treaties.',
+                                '<strong>ZATCA Audit & Dispute Support:</strong> We assist businesses during ZATCA reviews.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'gosi',
+                    title: 'GOSI Compliance Services',
+                    icon: 'fa-users-gear',
+                    subtitle: 'Clear and Practical GOSI Compliance Support',
+                    intro: 'ivision Consultancy provides professional GOSI (Social Security) compliance services in Saudi Arabia.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive GOSI Compliance Services',
+                            text: 'We handle monthly GOSI calculations.',
+                            list: [
+                                '<strong>GOSI Registration & Employer Setup:</strong> We assist businesses with employer registration.',
+                                '<strong>Employee Registration & Updates:</strong> We manage employee registrations and updates.',
+                                '<strong>Monthly GOSI Compliance & Reporting:</strong> We handle monthly GOSI calculations.',
+                                '<strong>GOSI Audit & Inquiry Support:</strong> We support businesses during inspections.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'bookkeeping',
+                    title: 'Bookkeeping & Accounting Services',
+                    icon: 'fa-book-journal-whills',
+                    subtitle: 'Reliable Accounting Support with Business Focus',
+                    intro: 'ivision Consultancy provides professional bookkeeping and accounting services in Saudi Arabia.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive Bookkeeping and Accounting Services',
+                            text: 'Our accounting services support compliance.',
+                            list: [
+                                '<strong>Day-to-Day Bookkeeping:</strong> We manage daily bookkeeping activities.',
+                                '<strong>Monthly and Periodic Accounting:</strong> We prepare monthly and annual accounts.',
+                                '<strong>Financial Statements & Reporting:</strong> We prepare financial statements.',
+                                '<strong>Compliance-Ready Accounting:</strong> Our accounting services support compliance.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'actuarial',
+                    title: 'Actuarial Services',
+                    icon: 'fa-calculator',
+                    subtitle: 'Reliable Actuarial Expertise with Business Understanding',
+                    intro: 'ivision Consultancy provides professional actuarial services in Saudi Arabia.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive Actuarial Services',
+                            text: 'We provide actuarial inputs.',
+                            list: [
+                                '<strong>Employee End-of-Service Benefits (EOSB) Valuations:</strong> We perform actuarial valuations.',
+                                '<strong>Employee Benefit Obligations:</strong> We support businesses with actuarial assessments.',
+                                '<strong>Financial Reporting Support:</strong> We provide actuarial inputs.',
+                                '<strong>Actuarial Advisory & Risk Assessment:</strong> We advise management on actuarial assumptions.'
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: 'incorporation',
+                    title: 'Company Incorporation Services',
+                    icon: 'fa-rocket',
+                    subtitle: 'Business Setup with Clear Guidance and Control',
+                    intro: 'ivision Consultancy provides professional company incorporation services in Saudi Arabia.',
+                    sections: [
+                        {
+                            heading: 'Comprehensive Company Incorporation Services',
+                            text: 'We support post-incorporation requirements.',
+                            list: [
+                                '<strong>Entity Structure & Licensing Advisory:</strong> We advise on appropriate legal structures.',
+                                '<strong>Foreign Investment & Local Ownership Support:</strong> We assist foreign investors.',
+                                '<strong>Company Registration & Government Approvals:</strong> We manage registrations.',
+                                '<strong>Post-Incorporation Compliance Setup:</strong> We support post-incorporation requirements.'
+                            ]
+                        }
+                    ]
+                }
+            ];
+
+            // --- RENDER SERVICES GRID ---
+            const servicesGrid = document.getElementById('services-grid');
+
+            servicesData.forEach(service => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.innerHTML = `
+                    <div class="icon-box">
+                        <i class="fa-solid ${service.icon}"></i>
+                    </div>
+                    <h3>${service.title}</h3>
+                    <p>${service.intro}</p>
+                    <span class="read-more">Learn More →</span>
+                `;
+                card.addEventListener('click', () => openService(service.id));
+                servicesGrid.appendChild(card);
+            });
+
+            // --- NAVIGATION LOGIC ---
+            const mobileBtn = document.getElementById('mobile-menu-btn');
+            const navLinks = document.getElementById('nav-links');
+            const navItems = document.querySelectorAll('.nav-links a');
+
+            mobileBtn.addEventListener('click', () => {
+                navLinks.classList.toggle('active');
+                const icon = mobileBtn.querySelector('i');
+                if(navLinks.classList.contains('active')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-xmark');
+                } else {
+                    icon.classList.remove('fa-xmark');
+                    icon.classList.add('fa-bars');
+                }
+            });
+
+            navItems.forEach(item => {
+                item.addEventListener('click', () => {
+                    navLinks.classList.remove('active');
+                    mobileBtn.querySelector('i').classList.remove('fa-xmark');
+                    mobileBtn.querySelector('i').classList.add('fa-bars');
+                });
+            });
+
+            // --- VIEW SWITCHING LOGIC (SPA) ---
+            const homeView = document.getElementById('home-view');
+            const serviceView = document.getElementById('service-view');
+            
+            const detailTitle = document.getElementById('service-banner-title');
+            const detailSubtitle = document.getElementById('service-banner-subtitle');
+            const detailIcon = document.getElementById('service-banner-icon');
+            const detailContent = document.getElementById('detail-content');
+
+            window.openService = function(serviceId) {
+                const service = servicesData.find(s => s.id === serviceId);
+                if (!service) return;
+
+                detailTitle.textContent = service.title;
+                detailSubtitle.textContent = service.subtitle;
+                
+                detailIcon.className = `fa-solid ${service.icon} hero-icon`;
+                
+                let contentHTML = `<p class="fade-in">${service.intro}</p>`;
+                
+                service.sections.forEach(section => {
+                    contentHTML += `
+                        <h2 class="fade-in">${section.heading}</h2>
+                        ${section.text ? `<p class="fade-in">${section.text}</p>` : ''}
+                        <ul class="fade-in">
+                            ${section.list.map(item => `<li>${item}</li>`).join('')}
+                        </ul>
+                    `;
+                });
+
+                contentHTML += `
+                    <div class="fade-in" style="background: #eef2f5; padding: 30px; border-radius: 8px; margin-top: 50px; border-left: 4px solid var(--primary);">
+                        <h3 style="font-size: 1.3rem; color: var(--primary); margin-bottom: 10px;">Supporting Business Growth under Saudi Vision 2030</h3>
+                        <p style="margin-bottom:0;">Saudi Arabia’s regulatory environment is aligned with Vision 2030, emphasizing transparency, governance, and compliance.</p>
+                    </div>
+                `;
+
+                detailContent.innerHTML = contentHTML;
+
+                homeView.classList.add('hidden');
+                serviceView.classList.remove('hidden');
+                serviceView.classList.add('fade-in');
+                window.scrollTo(0, 0);
+            };
+
+            window.goHome = function() {
+                serviceView.classList.add('hidden');
+                homeView.classList.remove('hidden');
+                homeView.classList.add('fade-in');
+                window.scrollTo(0, 0);
+            };
+
+            window.scrollToContact = function() {
+                goHome();
+                setTimeout(() => {
+                    document.getElementById('contact').scrollIntoView();
+                }, 100);
+            }
+
+            // --- INTERSECTION OBSERVER FOR SCROLL ANIMATIONS ---
+            const revealElements = document.querySelectorAll('.reveal');
+            
+            const revealObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, { root: null, threshold: 0.15, rootMargin: "0px 0px -50px 0px" });
+
+            revealElements.forEach(el => revealObserver.observe(el));
+
+
+            // --- NUMBER COUNTER ANIMATION ---
+            const statsSection = document.querySelector('.stats-bar');
+            const counters = document.querySelectorAll('.stat-item h3');
+            let hasStarted = false;
+
+            const statsObserver = new IntersectionObserver((entries) => {
+                const [entry] = entries;
+                if (entry.isIntersecting && !hasStarted) {
+                    hasStarted = true;
+                    counters.forEach(counter => {
+                        const target = +counter.getAttribute('data-target');
+                        const duration = 2000; 
+                        const increment = target / (duration / 16); 
+                        let current = 0;
+                        const updateCounter = () => {
+                            current += increment;
+                            if (current < target) {
+                                counter.innerText = Math.ceil(current) + (target === 100 ? '%' : '+');
+                                requestAnimationFrame(updateCounter);
+                            } else {
+                                counter.innerText = target + (target === 100 ? '%' : '+');
+                            }
+                        };
+                        updateCounter();
+                    });
+                }
+            }, { threshold: 0.5 });
+
+            if(statsSection) {
+                statsObserver.observe(statsSection);
+            }
+
+
+            // --- 2D SLIDER LOGIC ---
+            const track = document.getElementById('slidesTrack');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const dotsContainer = document.getElementById('sliderDots');
+            const slides = document.querySelectorAll('.slide');
+            
+            let currentIndex = 0;
+            const totalSlides = slides.length;
+            let autoPlayInterval;
+
+            slides.forEach((_, index) => {
+                const dot = document.createElement('div');
+                dot.classList.add('dot');
+                if(index === 0) dot.classList.add('active');
+                dot.addEventListener('click', () => goToSlide(index));
+                dotsContainer.appendChild(dot);
+            });
+
+            const dots = document.querySelectorAll('.dot');
+
+            function updateSlider() {
+                track.style.transform = `translateX(-${currentIndex * 100}%)`;
+                dots.forEach((dot, index) => {
+                    if(index === currentIndex) dot.classList.add('active');
+                    else dot.classList.remove('active');
+                });
+                
+                slides.forEach(slide => slide.classList.remove('active'));
+                slides[currentIndex].classList.add('active');
+            }
+
+            function nextSlide() {
+                currentIndex = (currentIndex + 1) % totalSlides;
+                updateSlider();
+                resetAutoPlay();
+            }
+
+            function prevSlide() {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+                updateSlider();
+                resetAutoPlay();
+            }
+
+            function goToSlide(index) {
+                currentIndex = index;
+                updateSlider();
+                resetAutoPlay();
+            }
+
+            function startAutoPlay() {
+                autoPlayInterval = setInterval(nextSlide, 5000);
+            }
+
+            function resetAutoPlay() {
+                clearInterval(autoPlayInterval);
+                startAutoPlay();
+            }
+
+            nextBtn.addEventListener('click', nextSlide);
+            prevBtn.addEventListener('click', prevSlide);
+            
+            const sliderContainer = document.querySelector('.about-slider-container');
+            sliderContainer.addEventListener('mouseenter', () => clearInterval(autoPlayInterval));
+            sliderContainer.addEventListener('mouseleave', startAutoPlay);
+
+            startAutoPlay();
+
+        });
+    </script>
+
+</body></html>
